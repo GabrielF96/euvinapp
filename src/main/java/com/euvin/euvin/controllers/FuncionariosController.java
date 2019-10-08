@@ -10,4 +10,9 @@ public class FuncionariosController{
     public String gerirFuncionarios(){
         return "gerirFuncionarios";
     }
+
+    @RequestMapping("/verificarJustificativas")
+    public String verificarJustificativas(){
+        return "verificarJustificativas";
+    }
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>EuvinApp</title>
+</head>
+<body>
+    <h1>Login EuvinApp</h1>
+
+    <form th:action="@{/login}" method="post">
+        <label for:"username">Username</label>
+        <input type="text" id="username" name="username" placeholder="username" />
+
+        <label for:"password">Password</label>
+        <input type="text" id="password" name="password" placeholder="password" />
+
+        <button type="submit">Login</button>>
+    </form>
+</body>
+</html>

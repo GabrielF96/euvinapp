@@ -2,6 +2,7 @@ package com.euvin.euvin.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -11,22 +12,37 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
+    private UserPrincipalDetailsService userPrincipalDetailsService;
+
+    public SecurityConfig(UserPrincipalDetailsService userPrincipalDetailsService){
+        this.userPrincipalDetailsService = userPrincipalDetailsService;
+    }
+    
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("gabriel").password(passwordEncoder().encode("gabriel123")).roles("USER")
-                .and()
-                .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN");
+    protected void configure(AuthenticationManagerBuilder auth) {
+        auth.authenticationProvider(authenticationProvider());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .anyRequest().authenticated()
+                .antMatchers("/").authenticated()
+                .antMatchers("/index").authenticated()
+                .antMatchers("/assinarPonto").authenticated()
+                .antMatchers("/gerirFuncionarios").hasRole("ADMIN")
+                .antMatchers("/verificarJustificativas").hasRole("ADMIN")
                 .and()
                 .httpBasic();
+    }
+
+    @Bean
+    DaoAuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        daoAuthenticationProvider.setUserDetailsService(this.userPrincipalDetailsService);
+
+        return daoAuthenticationProvider;
     }
 
     @Bean
