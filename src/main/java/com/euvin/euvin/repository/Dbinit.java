@@ -22,13 +22,13 @@ public class Dbinit implements CommandLineRunner{
         this.ur.deleteAll();
 
         User admin = new User();
-        admin.setUsername("admin");
+        admin.setEmail("teste.fatecrl@gmail.com");
         admin.setPassword(passwordEncoder.encode("admin123"));
         admin.setRoles("ADMIN");
         admin.setPermissions("");
 
         User usuario = new User();
-        usuario.setUsername("usuario");
+        usuario.setEmail("contacartola1@hotmail.com");
         usuario.setPassword(passwordEncoder.encode("usuario123"));
         usuario.setRoles("USER");
         usuario.setPermissions("");
