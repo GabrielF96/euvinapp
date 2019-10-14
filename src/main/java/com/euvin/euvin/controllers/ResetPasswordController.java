@@ -48,7 +48,8 @@ public class ResetPasswordController{
         PasswordResetToken psResetToken = prTokenRepository.findByToken(prDto.getToken());
         User user = psResetToken.getUser();
         userRepository.updatePassword(passwordEncoder.encode(prDto.getNewPassword()), user.getId());
-        
+        prTokenRepository.delete(psResetToken);
+
         return "redirect:/login";
     }
 }
