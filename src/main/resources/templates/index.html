@@ -36,6 +36,7 @@ li a:hover {
   <li><a class="active" sec:authorize="isAuthenticated()" th:href="@{/assinarPonto}">Assinar Ponto</a></li>
   <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/gerirFuncionarios}">Gerência de Funcionários</a></li>
   <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/verificarJustificativas}">Verificar Justificativas</a></li>
+  <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarUsuario}">Cadastrar Usuário</a></li>
   <li><a th:href="@{/logout}">Logout</a></li>
 	  
 </ul>

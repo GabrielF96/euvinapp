@@ -11,10 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import javassist.NotFoundException;
 
 @Controller
 public class ForgotPasswordController{
@@ -32,10 +31,10 @@ public class ForgotPasswordController{
     }
 
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
-    public String forgotPassForm(String email) throws NotFoundException {
+    public String forgotPassForm(String email, Model model) {
         User user = userRepository.findByEmail(email);
         if(user == null){
-            throw new NotFoundException("Email não encontrado!");
+            return "redirect:/forgotPassword?error";
         }
 
         PasswordResetToken prToken = new PasswordResetToken();
