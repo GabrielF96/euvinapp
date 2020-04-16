@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>EuvinApp</title>
+</head>
+<body>
+    <h1>Esqueci a Senha EuvinApp</h1>
+
+    <div th:if="${param.error}" class="alert alert-danger">
+        Email não encontrado!
+    </div>
+    <form th:action="@{/forgotPassword}" method="post">
+        <label for:"email">Email</label>
+        <input type="text" id="email" name="email" placeholder="email" />
+
+        <button type="submit">Enviar Email</button>
+    </form>
+
+</body>
+</html>

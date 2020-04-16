@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	  xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="EUVIN/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="EUVIN/css/style.css">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="first-column">
+                <h2 class="title title-primary">Olá, Amigo!</h2>
+                <br>
+                <p class="description description-primary">Esse é o site de ponto EUVIN!</p>
+                <br>
+                <p class="description description-primary">Por favor, entre com seus dados pessoais</p>
+                <p class="description description-primary">e comece sua jornada de trabalho conosco.</p>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Inicie Sua Jornada!</h2>
+                <p class="description description-second">Utilize o seu CPF:</p>
+                <form class="form" th:action="@{/login}" method="post">
+                    
+                    <label class="label-input">
+                        <i class="fa fa-id-badge icon-modify"></i>
+                        <input type="email" id="email" name="email" placeholder="E-mail">
+                    </label>
+                    
+                    <label class="label-input">
+                        <i class="fa fa-lock icon-modify"></i>
+                        <input type="password" id="password" name="password" placeholder="Senha">
+                    </label>
+                    
+                    <a class="password" th:href="@{/forgotPassword}">Esqueceu sua senha?</a>
+                    <button class="btn btn-second" type="submit">Entrar</button>
+                </form>
+                <div th:if="${param.error}" class="alert alert-danger">    
+			        Usuário ou senha inválidos.
+			    </div>
+            </div> 
+        </div>
+    </div>
+</body>
+
+</head>
+
+</html>

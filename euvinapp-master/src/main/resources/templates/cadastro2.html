@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>EuvinApp</title>
+</head>
+<body>
+    <h1>Cadastrar Novo Usuário EuvinApp</h1>
+
+    <form th:action="@{/cadastrarUsuario}" method="post" th:object="${cadastrarUsuarioForm}">
+
+        
+        <label for:"email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email do novo usuário" th:field="*{email}" />
+        
+        <label for:"tipoUsuario">Tipo de usuário</label>
+        <select id=tipoUsuario th:field="*{roles}">
+            <option value="" selected disabled>Escolha o tipo de usuário</option>
+            <option value="ADMIN">ADMINISTRADOR</option>
+            <option value="USER">USUÁRIO COMUM</option>
+        </select>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
