@@ -19,7 +19,7 @@ public class NovoUsuarioController{
 	Usuario usuario;
 
     @ModelAttribute("cadastrarUsuarioForm")
-    public User passwordReset() {
+    public User usuarioForm() {
         return new User();
     }
 

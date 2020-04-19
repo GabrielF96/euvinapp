@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar Empresa - EUVIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="EUVIN/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="EUVIN/css/style.css">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+
+<body>
+    <div class="container">
+
+        <div class="content">
+            <form class="form form-cadastro" method="post" th:action="@{/cadastrarEmpresa}" th:object="${cadastrarEmpresaForm}">
+
+                <h2 class="title title-second">Cadastro de Empresa:</h2>
+                
+                <label class="label-input">
+                    <i class="fa fa-id-badge icon-modify"></i>
+                    <input type="text" placeholder="Razão Social..." th:field="*{razaoSocial}">
+                </label>
+                
+                <label class="label-input">
+                    <i class="fa fa-id-badge icon-modify"></i>
+                    <input type="text" placeholder="Nome Fantasia..." th:field="*{nomeFantasia}">
+                </label>
+
+                <label class="label-input">
+                    <i class="fa fa-id-badge icon-modify"></i>
+                    <input type="text" placeholder="CNPJ..." th:field="*{cnpjEmpresa}">
+                </label>
+                
+                <label class="label-input">
+                    <i class="fa fa-id-badge icon-modify"></i>
+                    <input type="text" placeholder="Endereço..." th:field="*{endereco}">
+                </label>
+                
+                <label class="label-input">
+                    <i class="fa fa-id-badge icon-modify"></i>
+                    <input type="text" placeholder="Telefone..." th:field="*{contato}">
+                </label>
+                
+                <button class="btn btn-second" type="submit">Cadastrar</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</head>
+
+</html>
