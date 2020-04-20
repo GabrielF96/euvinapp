@@ -19,7 +19,7 @@ public class Usuario {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	@Autowired
-	UserRepository ur;
+	UserRepository usuarioRepository;
     @Autowired
 	MailSender mailSender;
     
@@ -28,7 +28,7 @@ public class Usuario {
 		user.setPassword(passwordEncoder.encode(user.getPasswordAnterior()));
         user.setPermissions("");
         user.setPrimeiroAcesso(true);
-		ur.save(user);
+		usuarioRepository.save(user);
 		
 //		enviaEmailCadastroUsuario(user);
 	}
@@ -47,7 +47,7 @@ public class Usuario {
 	
 	public List<User> getUsuariosRole(String role){
 		if(role!=null) {
-			return ur.findByRoles(role);
+			return usuarioRepository.findByRoles(role);
 		}
 		
 		return new ArrayList<User>();

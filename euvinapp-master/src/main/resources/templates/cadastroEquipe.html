@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Cadastro de Equipe - EUVIN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="EUVIN/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="EUVIN/css/style.css">
@@ -18,24 +18,32 @@
     <div class="container">
 
         <div class="content">
-            <form class="form form-cadastro">
+            <form class="form form-cadastro" method="post" th:action="@{/cadastrarEquipe}" th:object="${cadastrarEquipeForm}">
 
                 <h2 class="title title-second">Cadastro de Equipe:</h2>
                 
                 <label class="label-input">
                     <i class="fa fa-id-badge icon-modify"></i>
-                    <input type="text" placeholder="Código da Equipe...">
+                    <input type="text" placeholder="Nome da Equipe..." th:field="*{nome}">
                 </label>
                 
-                <select class="select">
-                	<option value=""></option>
-                	<option th:each="usuarioLider : ${usuariosLiderList}" th:value="${usuarioLider.id}" th:text="${usuarioLider.nome}"/>
-                </select>   
+                <label class="label-input">
+                    <i class="fa fa-id-badge icon-modify"></i> 
+	                <select class="select" th:field="*{cnpjEmpresa}">   
+	                    <option value="0"></option>                
+	                    <option th:each="empresa : ${empresasList}" th:value="${empresa.cnpjEmpresa}" th:text="${empresa.nomeFantasia}"></option>
+	                </select>
+                </label>
                 
-                <select class="select" >   
-                    <option>&#xf074; Empresa...</option>                
-                    <option>&#xf074; 90814926000103</option>
-                </select>
+	            <label class="label-input">
+                    <i class="fa fa-id-badge icon-modify"></i>    
+	                <select class="select" th:field="*{codigoLider}">
+	                	<option value="0"></option>
+	                	<option th:each="usuarioLider : ${usuariosLiderList}" th:value="${usuarioLider.id}" th:text="${usuarioLider.nome}"/>
+	                </select>   
+                </label>
+                
+                
                 <button class="btn btn-second">Cadastrar</button>
             </form>
 

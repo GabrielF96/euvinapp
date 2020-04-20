@@ -13,17 +13,17 @@ import com.euvin.euvin.repository.EmpresaRepository;
 public class Empresa {
 	
 	 @Autowired
-	 EmpresaRepository emprep;
+	 EmpresaRepository equipeRepository;
 	
 	public List<EmpresaModel> getEmpresas(){
 		List<EmpresaModel> empresasList = new ArrayList<EmpresaModel>();
 		
-		empresasList.addAll(emprep.findAll());
+		empresasList.addAll(equipeRepository.findAll());
 		
 		return empresasList;
 	}
 	
 	public void cadastrarEmpresa(EmpresaModel empresaModel) {
-		emprep.save(empresaModel);
+		equipeRepository.save(empresaModel);
 	}
 }
