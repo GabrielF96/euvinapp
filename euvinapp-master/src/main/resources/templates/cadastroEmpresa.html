@@ -15,6 +15,45 @@
     <!--<link href="css/style.css" rel="stylesheet">-->
 
 <body>
+	<nav class="menu">
+        <ul>
+            <li>Empresa
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEmpresa}"><li>Cadastrar Empresa</li></a>
+                    <a href=""><li>Consultar Empresa</li></a>
+                    <a href=""><li>Editar Empresa</li></a>
+                    <a href=""><li>Excluir Empresa</li></a>
+                </ul>
+            </li>
+            <li>Equipe
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEquipe}"><li>Cadastrar Equipe</li></a>
+                    <a href=""><li>Cadastrar Usuário em Equipe</li></a>
+                    <a href=""><li>Consultar Equipe</li></a>
+                    <a href=""><li>Editar Equipe</li></a>
+                    <a href=""><li>Excluir Equipe</li></a>
+                </ul>
+            </li>
+            <li>Usuário
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarUsuario}"><li>Cadastrar Usuário</li></a>
+                    <a href="cadastroUsuarioEquipe.html"><li>Cadastrar Usuário em Equipe</li></a>
+                    <a href=""><li>Consultar Usuário</li></a>
+                    <a href=""><li>Editar Usuário</li></a>
+                    <a href=""><li>Excluir Usuário</li></a>
+                </ul>
+            </li>
+            <li>Ponto
+                <ul>
+                    <a href="controlePonto.html"><li>Cadastrar Ponto</li></a>
+                    <a href=""><li>Consultar Ponto</li></a>
+                    <a href=""><li>Editar Ponto</li></a>
+                    <a href=""><li>Excluir Ponto</li></a>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
     <div class="container">
 
         <div class="content">

@@ -3,44 +3,87 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-	<title>EuvinApp</title>
 <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+/* ul { */
+/*   list-style-type: none; */
+/*   margin: 0; */
+/*   padding: 0; */
+/*   overflow: hidden; */
+/*   background-color: #333; */
+/* } */
 
-li {
-  float: left;
-}
+/* li { */
+/*   float: left; */
+/* } */
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+/* li a { */
+/*   display: block; */
+/*   color: white; */
+/*   text-align: center; */
+/*   padding: 14px 16px; */
+/*   text-decoration: none; */
+/* } */
 
-li a:hover {
-  background-color: #111;
-}
+/* li a:hover { */
+/*   background-color: #111; */
+/* } */
 </style>
 </head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="EUVIN/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="EUVIN/css/style.css">
 <body>
-
-<ul>
-  <li><a class="active" sec:authorize="isAuthenticated()" th:href="@{/assinarPonto}">Assinar Ponto</a></li>
-  <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/gerirFuncionarios}">Gerência de Funcionários</a></li>
-  <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/verificarJustificativas}">Verificar Justificativas</a></li>
-  <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarUsuario}">Cadastrar Usuário</a></li>
-  <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEquipe}">Cadastrar Equipe</a></li>
-  <li><a th:href="@{/logout}">Logout</a></li>
+	<nav class="menu">
+        <ul>
+            <li>Empresa
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEmpresa}"><li>Cadastrar Empresa</li></a>
+                    <a href=""><li>Consultar Empresa</li></a>
+                    <a href=""><li>Editar Empresa</li></a>
+                    <a href=""><li>Excluir Empresa</li></a>
+                </ul>
+            </li>
+            <li>Equipe
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEquipe}"><li>Cadastrar Equipe</li></a>
+                    <a href=""><li>Cadastrar Usuário em Equipe</li></a>
+                    <a href=""><li>Consultar Equipe</li></a>
+                    <a href=""><li>Editar Equipe</li></a>
+                    <a href=""><li>Excluir Equipe</li></a>
+                </ul>
+            </li>
+            <li>Usuário
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarUsuario}"><li>Cadastrar Usuário</li></a>
+                    <a href="cadastroUsuarioEquipe.html"><li>Cadastrar Usuário em Equipe</li></a>
+                    <a href=""><li>Consultar Usuário</li></a>
+                    <a href=""><li>Editar Usuário</li></a>
+                    <a href=""><li>Excluir Usuário</li></a>
+                </ul>
+            </li>
+            <li>Ponto
+                <ul>
+                    <a th:href="@{/assinarPonto}"><li>Cadastrar Ponto</li></a>
+                    <a href=""><li>Consultar Ponto</li></a>
+                    <a href=""><li>Editar Ponto</li></a>
+                    <a href=""><li>Excluir Ponto</li></a>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+<!-- <ul> -->
+<!--   <li><a class="active" sec:authorize="isAuthenticated()" th:href="@{/assinarPonto}">Assinar Ponto</a></li> -->
+<!--   <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/gerirFuncionarios}">GerÃªncia de FuncionÃ¡rios</a></li> -->
+<!--   <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/verificarJustificativas}">Verificar Justificativas</a></li> -->
+<!--   <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarUsuario}">Cadastrar UsuÃ¡rio</a></li> -->
+<!--   <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEquipe}">Cadastrar Equipe</a></li> -->
+<!--   <li><a th:href="@{/logout}">Logout</a></li> -->
 	  
-</ul>
+<!-- </ul> -->
 
 </body>
 </html>

@@ -47,15 +47,12 @@
                     <input type="text" placeholder="Turno..." th:field="*{turno}">
                 </label>
                 
-                <label class="label-input">
-                	<i class="fa fa-id-badge icon-modify"></i>
-                	<select id=tipoUsuario th:field="*{roles}">
-			            <option value="" selected disabled>Escolha o tipo de usuário</option>
-			            <option value="ADMIN">Administrador</option>
-			            <option value="LIDER">Líder</option>
-			            <option value="USER">Usuário Comum</option>
-			        </select>
-                </label>
+               	<select class="select" id=tipoUsuario th:field="*{roles}">
+		            <option value="" selected disabled>Escolha o tipo de usuário</option>
+		            <option value="ADMIN">Administrador</option>
+		            <option value="LIDER">Líder</option>
+		            <option value="USER">Usuário Comum</option>
+		        </select>
                 
                 <button class="btn btn-second" type="submit">Salvar</button>
             </form>
