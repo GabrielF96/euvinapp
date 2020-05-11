@@ -18,24 +18,65 @@ function startTime() {
   h + ":" + m + ":" + s;
   var t = setTimeout(startTime, 500);
     
+    
+ 
   
-  document.getElementById('mostrarHora1').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);  
-    
-  document.getElementById('mostrarHora2').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500); 
-    
-  document.getElementById('mostrarHora3').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500); 
-    
-  document.getElementById('mostrarHora4').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500); 
-  
-
+  //se o boato 1 já foi tickado
+  if(1 == 1)
+  //if(document.getElementById('btn1').disabled == false)
+  {
+      //Deixa o horario correndo da label 1
+      document.getElementById('mostrarHora1').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);  
+      
+      
+      document.getElementById('btn2').class("btn btn-third");
+      document.getElementById('btn2').disabled = false;
+      
+      document.getElementById('btn1').class("btn btn-third-disabled");
+      document.getElementById('btn1').disabled = true;
+      //remove o disabled do botao 2 e coloca no 1
+  }
+    //se o boato 2 já foi tickado
+  else if (2 == 0)
+  {
+      //Deixa o horario correndo da label 2
+      document.getElementById('mostrarHora2').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500); 
+      
+      //remove o disabled do botao 3 e coloca no 2
+  }
+    //se o boato 2 já foi tickado
+  else if (3 == 0)
+  {
+      //Deixa o horario correndo da label 3
+      document.getElementById('mostrarHora3').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+      
+      
+      document.getElementById('mostrarHora2').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500); 
+      
+      //remove o disabled do botao 3 e coloca no 2
+  }
+    //se o boato 2 já foi tickado
+  else if (4 == 0)
+  {
+      //Deixa o horario correndo da label 4
+      document.getElementById('mostrarHora4').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+      
+      document.getElementById('mostrarHora2').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500); 
+      
+      //remove o disabled do botao 3 e coloca no 2
+  }
 }
 
 

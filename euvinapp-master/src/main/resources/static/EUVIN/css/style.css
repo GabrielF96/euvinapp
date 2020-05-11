@@ -168,6 +168,18 @@
     color: #58af90;
 }
 
+.btn-third-disabled
+{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    text-align: center;
+    background-color: #58af90;
+    border: 1px solid #58af90;
+    color: #fff;
+}
+
 
 .first-column{    
     display: flex;

@@ -10,8 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="EUVIN/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="EUVIN/css/style.css">
+    <link rel="stylesheet" href="euvinapp-master/src/main/resources/static/EUVIN/css/bootstrap.min.css">
+    <link rel="stylesheet" href="euvinapp-master/src/main/resources/static/EUVIN/css/style.css">
     <!--<link href="css/style.css" rel="stylesheet">-->
 
 <body onload="startTime()">
@@ -70,7 +70,7 @@
                 
                 <div class="form-row">
                 <label id="mostrarHora1" class="label-label-primary">00:00:00</label>
-                <button class="btn btn-third"><i class="fa fa-check icon-modify2"></i></button>
+                <button id = "btn1" class="btn btn-third"><i class="fa fa-check icon-modify2"></i></button>
                 </div>
                 <!-- 
                     Ao clicar nesse botao, mostrar na label (mostrarHora) o horario atual (horario do click) 
@@ -80,8 +80,8 @@
                 <h4 class="third">Saída para Almoço</h4>
                 
                 <div class="form-row">
-                <label id="mostrarHora2" class="label-label-primary">00:00:00</label>
-                <button class="btn btn-third"><i class="fa fa-check icon-modify2"></i></button>
+                <label id="mostrarHora2" class="label-label-primary">--:--:--</label>
+                <button id="btn2" class="btn btn-third-disabled" disabled><i class="fa fa-check icon-modify2" ></i></button>
                 </div>
                 <!-- 
                     Ao clicar nesse botao, mostrar na label (mostrarHora) o horario atual (horario do click) 
@@ -93,8 +93,8 @@
                 <h4 class="third">Retorno do Almoço</h4>
                 
                 <div class="form-row">
-                <label id="mostrarHora3" class="label-label-primary">00:00:00</label>
-                <button class="btn btn-third"><i class="fa fa-check icon-modify2"></i></button>
+                <label id="mostrarHora3" class="label-label-primary">--:--:--</label>
+                <button class="btn btn-third-disabled" disabled><i class="fa fa-check icon-modify2"></i></button>
                 </div>
                 <!-- 
                     Ao clicar nesse botao, mostrar na label (mostrarHora) o horario atual (horario do click) 
@@ -106,8 +106,8 @@
                 <h4 class="third">Fim de Jornada</h4>
                 
                 <div class="form-row">
-                <label id="mostrarHora4" class="label-label-primary">00:00:00</label>
-                <button class="btn btn-third"><i class="fa fa-check icon-modify2"></i></button>
+                <label id="mostrarHora4" class="label-label-primary">--:--:--</label>
+                <button class="btn btn-third-disabled" disabled><i class="fa fa-check icon-modify2"></i></button>
                 </div>
                 <!-- 
                     Ao clicar nesse botao, mostrar na label (mostrarHora) o horario atual (horario do click) 
@@ -116,7 +116,7 @@
                 
                 <br>
                 <br>
-                <button class="btn btn-second">Assinar</button>
+                <!-- <button class="btn btn-second">Assinar</button> -->
             </form>
 
         </div>
