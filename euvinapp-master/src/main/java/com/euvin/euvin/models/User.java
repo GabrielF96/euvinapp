@@ -14,41 +14,41 @@ import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="Usuario", uniqueConstraints = @UniqueConstraint(columnNames = "emailUsuario"))
+@Table(name="Usuario", uniqueConstraints = @UniqueConstraint(columnNames = "email_usuario"))
 public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name="EmailUsuario", nullable = false, unique = true)
+    @Column(name="email_usuario", nullable = false, unique = true)
     private String email;
 
-    @Column(name="SenhaUsuario", nullable = false)
+    @Column(name="senha_usuario", nullable = false)
     private String password;
 
-    @Column(name="NomeUsuario")
+    @Column(name="nome_usuario")
     private String nome;
     
-    @Column(name="CpfUsuario")
+    @Column(name="cpf_usuario")
     private String cpf;
     
-    @Column(name="CargoUsuario")
+    @Column(name="cargo_usuario")
     private String cargo;
     
-    @Column(name="TurnoUsuario")
+    @Column(name="turno_usuario")
     private String turno;
     
-    @Column(name="SaldoDeHorasUsuario")
+    @Column(name="saldo_de_horas_usuario")
     private Double saldoDeHoras;
     
-    @Column(name="PrimeiroAcesso")
+    @Column(name="primeiro_acesso")
     private boolean primeiroAcesso;
     
-    @Column(name="Roles")
+    @Column(name="roles")
     private String roles = "";
     
-    @Column(name="Permissions")
+    @Column(name="permissions")
     private String permissions = "";
     
     @Transient

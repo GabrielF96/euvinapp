@@ -8,41 +8,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="euvinapp-master/src/main/resources/static/EUVIN/css/bootstrap.min.css">
-    <link rel="stylesheet" href="euvinapp-master/src/main/resources/static/EUVIN/css/style.css">
+    <link rel="stylesheet" href="EUVIN/css/bootstrap.min.css">
+    <link rel="stylesheet" href="EUVIN/css/style.css">
     <!--<link href="css/style.css" rel="stylesheet">-->
 <body>
-	<div class="container">
-        <div class="content">
-            <div class="first-column">
-                <h2 class="title title-primary">Olá, Amigo!</h2>
-                <br>
-                <p class="description description-primary">Esse é o site de ponto EUVIN!</p>
-                <br>
-                <p class="description description-primary">Por favor, entre com seus dados pessoais</p>
-                <p class="description description-primary">e comece sua jornada de trabalho conosco.</p>
-            </div>
-            <div class="second-column">
-                <h2 class="title title-second">Inicie Sua Jornada!</h2>
-                <p class="description description-second">Utilize o seu CPF:</p>
-                <form class="form">
-                    
-                    <label class="label-input">
-                        <i class="fa fa-id-badge icon-modify"></i>
-                        <input type="text" placeholder="Digite o CPF sem pontuação">
-                    </label>
-                    
-                    <label class="label-input">
-                        <i class="fa fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Digite a senha">
-                    </label>
-                    
-                    <a class="password" href="/cadastroUsuario.html">Esqueceu sua senha?</a>
-                    <button class="btn btn-second">Entrar</button>
-                </form>
-            </div> 
-        </div>
-    </div>
+	<nav class="menu">
+        <ul>
+            <li>Empresa
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEmpresa}"><li>Cadastrar Empresa</li></a>
+                    <a href=""><li>Consultar Empresa</li></a>
+                    <a href=""><li>Editar Empresa</li></a>
+                    <a href=""><li>Excluir Empresa</li></a>
+                </ul>
+            </li>
+            <li>Equipe
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarEquipe}"><li>Cadastrar Equipe</li></a>
+                    <a href=""><li>Cadastrar Usuário em Equipe</li></a>
+                    <a href=""><li>Consultar Equipe</li></a>
+                    <a href=""><li>Editar Equipe</li></a>
+                    <a href=""><li>Excluir Equipe</li></a>
+                </ul>
+            </li>
+            <li>Usuário
+                <ul>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cadastrarUsuario}"><li>Cadastrar Usuário</li></a>
+                    <a href="cadastroUsuarioEquipe.html"><li>Cadastrar Usuário em Equipe</li></a>
+                    <a href=""><li>Consultar Usuário</li></a>
+                    <a href=""><li>Editar Usuário</li></a>
+                    <a href=""><li>Excluir Usuário</li></a>
+                </ul>
+            </li>
+            <li>Ponto
+                <ul>
+                    <a th:href="@{/assinarPonto}"><li>Cadastrar Ponto</li></a>
+                    <a href=""><li>Consultar Ponto</li></a>
+                    <a href=""><li>Editar Ponto</li></a>
+                    <a href=""><li>Excluir Ponto</li></a>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 </body>
 
 </head>

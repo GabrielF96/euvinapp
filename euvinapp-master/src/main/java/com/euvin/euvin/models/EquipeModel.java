@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -20,11 +22,13 @@ public class EquipeModel {
 	@Column(name = "nome_equipe")
 	private String nome;
 	
-	@Column(name = "lider_equipe")
-	private long codigoLider;
+	@ManyToOne
+	@JoinColumn(name="id_lider_equipe")
+	private User liderEquipe;
 	
-	@Column(name = "cnpj_empresa")
-	private String cnpjEmpresa;
+	@ManyToOne
+	@JoinColumn(name="cnpj_empresa")
+	private EmpresaModel empresaEquipe;
 
 	public long getId() {
 		return id;
@@ -42,20 +46,20 @@ public class EquipeModel {
 		this.nome = nome;
 	}
 
-	public long getCodigoLider() {
-		return codigoLider;
+	public User getLiderEquipe() {
+		return liderEquipe;
 	}
 
-	public void setCodigoLider(long codigoLider) {
-		this.codigoLider = codigoLider;
+	public void setLiderEquipe(User liderEquipe) {
+		this.liderEquipe = liderEquipe;
 	}
 
-	public String getCnpjEmpresa() {
-		return cnpjEmpresa;
+	public EmpresaModel getEmpresaEquipe() {
+		return empresaEquipe;
 	}
 
-	public void setCnpjEmpresa(String cnpjEmpresa) {
-		this.cnpjEmpresa = cnpjEmpresa;
+	public void setEmpresaEquipe(EmpresaModel empresaEquipe) {
+		this.empresaEquipe = empresaEquipe;
 	}
-	
+
 }

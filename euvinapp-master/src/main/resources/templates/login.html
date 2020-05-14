@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br"
 	  xmlns:th="http://thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="utf-8">
@@ -9,8 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="euvinapp-master/src/main/resources/static/EUVIN/css/bootstrap.min.css">
-    <link rel="stylesheet" href="euvinapp-master/src/main/resources/static/EUVIN/css/style.css">
+    <link rel="stylesheet" href="EUVIN/css/bootstrap.min.css">
+    <link rel="stylesheet" href="EUVIN/css/style.css">
     <!--<link href="css/style.css" rel="stylesheet">-->
 <body>
     <div class="container">
@@ -30,12 +31,12 @@
                     
                     <label class="label-input">
                         <i class="fa fa-id-badge icon-modify"></i>
-                        <input type="email" id="email" name="email" placeholder="E-mail">
+                        <input type="email" id="email" name="email" placeholder="E-mail"/>
                     </label>
                     
                     <label class="label-input">
                         <i class="fa fa-lock icon-modify"></i>
-                        <input type="password" id="password" name="password" placeholder="Senha">
+                        <input type="password" id="password" name="password" placeholder="Senha"/>
                     </label>
                     
                     <a class="password" th:href="@{/forgotPassword}">Esqueceu sua senha?</a>

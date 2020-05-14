@@ -2,18 +2,19 @@ package com.euvin.euvin.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "Ponto", uniqueConstraints = @UniqueConstraint(columnNames = ""))
+@Table(name = "Ponto", uniqueConstraints = @UniqueConstraint(columnNames = "id"))
 public class PontoModel {
 	
+	@Id
 	@Column(name = "id", nullable = false)
 	private long id;
-	
-	@Column(name = "id_usuario")
-	private long idUsuario;
 	
 	@Column(name = "data_ponto")
 	private String dataPonto;
@@ -29,6 +30,10 @@ public class PontoModel {
 	
 	@Column(name = "saida_ponto")
 	private String saidaPonto;
+	
+	@ManyToOne
+	@JoinColumn(name="id_usuario")
+	private User usuarioPonto;
 
 	public long getId() {
 		return id;
@@ -36,14 +41,6 @@ public class PontoModel {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public long getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(long idUsuario) {
-		this.idUsuario = idUsuario;
 	}
 
 	public String getDataPonto() {
@@ -84,6 +81,14 @@ public class PontoModel {
 
 	public void setSaidaPonto(String saidaPonto) {
 		this.saidaPonto = saidaPonto;
+	}
+
+	public User getUsuarioPonto() {
+		return usuarioPonto;
+	}
+
+	public void setUsuarioPonto(User usuarioPonto) {
+		this.usuarioPonto = usuarioPonto;
 	}
 	
 }
