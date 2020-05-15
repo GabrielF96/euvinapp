@@ -45,7 +45,7 @@
             </li>
             <li>Ponto
                 <ul>
-                    <a href="controlePonto.html"><li>Cadastrar Ponto</li></a>
+                    <a th:href="@{/assinarPonto}"><li>Cadastrar Ponto</li></a>
                     <a href=""><li>Consultar Ponto</li></a>
                     <a href=""><li>Editar Ponto</li></a>
                     <a href=""><li>Excluir Ponto</li></a>
@@ -57,9 +57,9 @@
     <div class="container">
 
         <div class="content">
-            <form class="form form-cadastro">
+            <form class="form form-cadastro" method="POST" th:action="@{/assinarPonto}" th:object="${cadastrarPontoForm}">
 
-                <script src="EUVIN/js/relogioPonto.js"></script>
+<!--                 <script src="EUVIN/js/relogioPonto.js"></script> -->
                 
                 <h2 class="title title-second">Controle de Ponto:</h2>
                 
@@ -69,8 +69,8 @@
                 <h4 class="third">Começo de Jornada</h4>
                 
                 <div class="form-row">
-                <label id="mostrarHora1" class="label-label-primary">00:00:00</label>
-                <button id = "btn1" class="btn btn-third"><i class="fa fa-check icon-modify2"></i></button>
+                <label id="mostrarHora1" class="label-label-primary"></label>
+                <button id = "btn1" class="btn btn-third" type="submit"><i class="fa fa-check icon-modify2"></i></button>
                 </div>
                 <!-- 
                     Ao clicar nesse botao, mostrar na label (mostrarHora) o horario atual (horario do click) 
@@ -80,7 +80,7 @@
                 <h4 class="third">Saída para Almoço</h4>
                 
                 <div class="form-row">
-                <label id="mostrarHora2" class="label-label-primary">--:--:--</label>
+                <label id="mostrarHora2" class="label-label-primary" th:field="*{entradaPonto}" th:text="${ponto.entradaPonto == null ? '--:--:--' : ponto.entradaPonto}">--:--:--</label>
                 <button id="btn2" class="btn btn-third-disabled" disabled><i class="fa fa-check icon-modify2" ></i></button>
                 </div>
                 <!-- 
@@ -93,7 +93,7 @@
                 <h4 class="third">Retorno do Almoço</h4>
                 
                 <div class="form-row">
-                <label id="mostrarHora3" class="label-label-primary">--:--:--</label>
+                <label id="mostrarHora3" class="label-label-primary" th:field="*{saidaAlmoco}" th:text="${ponto.saidaAlmoco == null ? '--:--:--' : ponto.saidaAlmoco}"></label>
                 <button class="btn btn-third-disabled" disabled><i class="fa fa-check icon-modify2"></i></button>
                 </div>
                 <!-- 

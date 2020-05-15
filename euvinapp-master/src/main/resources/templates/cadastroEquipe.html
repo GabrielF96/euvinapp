@@ -68,7 +68,7 @@
                 
                 <label class="label-input">
                     <i class="fa fa-id-badge icon-modify"></i> 
-	                <select class="select" th:field="*{cnpjEmpresa}">   
+	                <select class="select" th:field="*{empresaEquipe}">   
 	                    <option value="0"></option>                
 	                    <option th:each="empresa : ${empresasList}" th:value="${empresa.cnpjEmpresa}" th:text="${empresa.nomeFantasia}"></option>
 	                </select>
@@ -76,7 +76,7 @@
                 
 	            <label class="label-input">
                     <i class="fa fa-id-badge icon-modify"></i>    
-	                <select class="select" th:field="*{codigoLider}">
+	                <select class="select" th:field="*{liderEquipe}">
 	                	<option value="0"></option>
 	                	<option th:each="usuarioLider : ${usuariosLiderList}" th:value="${usuarioLider.id}" th:text="${usuarioLider.nome}"/>
 	                </select>   

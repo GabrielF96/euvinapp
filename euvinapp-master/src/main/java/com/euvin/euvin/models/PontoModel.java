@@ -1,7 +1,11 @@
 package com.euvin.euvin.models;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,11 +17,12 @@ import javax.persistence.UniqueConstraint;
 public class PontoModel {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false)
 	private long id;
 	
 	@Column(name = "data_ponto")
-	private String dataPonto;
+	private LocalDate dataPonto;
 	
 	@Column(name = "entrada_ponto")
 	private String entradaPonto;
@@ -41,14 +46,6 @@ public class PontoModel {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getDataPonto() {
-		return dataPonto;
-	}
-
-	public void setDataPonto(String dataPonto) {
-		this.dataPonto = dataPonto;
 	}
 
 	public String getEntradaPonto() {
@@ -89,6 +86,14 @@ public class PontoModel {
 
 	public void setUsuarioPonto(User usuarioPonto) {
 		this.usuarioPonto = usuarioPonto;
+	}
+
+	public LocalDate getDataPonto() {
+		return dataPonto;
+	}
+
+	public void setDataPonto(LocalDate dataPonto) {
+		this.dataPonto = dataPonto;
 	}
 	
 }
