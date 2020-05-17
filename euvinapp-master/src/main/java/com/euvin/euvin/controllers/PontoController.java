@@ -27,14 +27,14 @@ public class PontoController{
     public ModelAndView assinarPonto(){
         
     	ModelAndView mv = new ModelAndView("controlePonto");
-    	mv.addObject("ponto", ponto.getPontoModelDoDia());
+    	mv.addObject("ponto", ponto.carregaOuCriaPontoDoDia());
     	
     	return mv;
     }
     
     @PostMapping
     public String salvarRegistroPonto() {
-    	ponto.getPontoModelDoDia();
+    	ponto.cadastrarHorarioPonto();
     	return "redirect:/home";
     }
     

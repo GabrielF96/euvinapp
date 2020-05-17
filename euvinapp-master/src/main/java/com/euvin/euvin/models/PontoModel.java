@@ -1,6 +1,8 @@
 package com.euvin.euvin.models;
 
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,16 +27,16 @@ public class PontoModel {
 	private LocalDate dataPonto;
 	
 	@Column(name = "entrada_ponto")
-	private String entradaPonto;
+	private Time entradaPonto;
 	
 	@Column(name = "saida_almoco")
-	private String saidaAlmoco;
+	private Time saidaAlmoco;
 	
 	@Column(name = "volta_almoco")
-	private String voltaAlmoco;
+	private Time voltaAlmoco;
 	
 	@Column(name = "saida_ponto")
-	private String saidaPonto;
+	private Time saidaPonto;
 	
 	@ManyToOne
 	@JoinColumn(name="id_usuario")
@@ -46,38 +48,6 @@ public class PontoModel {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getEntradaPonto() {
-		return entradaPonto;
-	}
-
-	public void setEntradaPonto(String entradaPonto) {
-		this.entradaPonto = entradaPonto;
-	}
-
-	public String getSaidaAlmoco() {
-		return saidaAlmoco;
-	}
-
-	public void setSaidaAlmoco(String saidaAlmoco) {
-		this.saidaAlmoco = saidaAlmoco;
-	}
-
-	public String getVoltaAlmoco() {
-		return voltaAlmoco;
-	}
-
-	public void setVoltaAlmoco(String voltaAlmoco) {
-		this.voltaAlmoco = voltaAlmoco;
-	}
-
-	public String getSaidaPonto() {
-		return saidaPonto;
-	}
-
-	public void setSaidaPonto(String saidaPonto) {
-		this.saidaPonto = saidaPonto;
 	}
 
 	public User getUsuarioPonto() {
@@ -95,5 +65,37 @@ public class PontoModel {
 	public void setDataPonto(LocalDate dataPonto) {
 		this.dataPonto = dataPonto;
 	}
-	
+
+	public Time getEntradaPonto() {
+		return entradaPonto;
+	}
+
+	public void setEntradaPonto(Time entradaPonto) {
+		this.entradaPonto = entradaPonto;
+	}
+
+	public Time getSaidaAlmoco() {
+		return saidaAlmoco;
+	}
+
+	public void setSaidaAlmoco(Time saidaAlmoco) {
+		this.saidaAlmoco = saidaAlmoco;
+	}
+
+	public Time getVoltaAlmoco() {
+		return voltaAlmoco;
+	}
+
+	public void setVoltaAlmoco(Time voltaAlmoco) {
+		this.voltaAlmoco = voltaAlmoco;
+	}
+
+	public Time getSaidaPonto() {
+		return saidaPonto;
+	}
+
+	public void setSaidaPonto(Time saidaPonto) {
+		this.saidaPonto = saidaPonto;
+	}
+
 }

@@ -7,11 +7,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.euvin.euvin.models.User;
 import com.euvin.euvin.repository.UserRepository;
+import com.euvin.euvin.security.UserPrincipal;
 
 @Service
 public class Usuario {
@@ -51,6 +53,11 @@ public class Usuario {
 		}
 		
 		return new ArrayList<User>();
+	}
+	
+	public User getUsuarioLogado() {
+		UserPrincipal userPrincipal = (UserPrincipal)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		return userPrincipal.getUser();
 	}
 	
 }
