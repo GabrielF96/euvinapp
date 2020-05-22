@@ -36,6 +36,7 @@ public class PontoController{
     public String salvarRegistroPonto() {
     	ponto.cadastrarHorarioPonto();
     	return "redirect:/home";
+    	
     }
     
 }
